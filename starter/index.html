@@ -72,9 +72,10 @@
 </body>
 
 <script>
+  var list = document.querySelector('post-list');
   var tabs = document.querySelector('paper-tabs');
   tabs.addEventListener('core-select', function() {
-    console.log('Selected: ' + tabs.selected);
+    list.show = tabs.selected;
   });
 </script>
 </html>

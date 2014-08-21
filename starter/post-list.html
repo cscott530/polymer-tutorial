@@ -18,7 +18,9 @@
     
     <div layout vertical center>
       <template repeat="{{post in posts}}">
-        <post-card>
+        <post-card favorite="{{post.favorite}}"
+          on-favorite=-tap="handleFavorite"
+          hidden?="{{show == 'favorites' && !post.favorite}}">
           <h2>{{post.username}}</h2>
           <img src="{{post.avatar}}"/>
           <p>{{post.text}}</p>
@@ -28,7 +30,12 @@
   </template>
 
   <script>
-  Polymer({});
+  Polymer({
+    handleFavorite: function(event, detail, sender) {
+      var post = sender.templateInstance.model.post;
+      this.$.service.setFavorite(post.uid, post.favorite);
+    }
+  });
   </script>
 
 </polymer-element>
