@@ -9,7 +9,6 @@
   <link rel="import" href="../components/core-header-panel/core-header-panel.html">
   <link rel="import" href="../components/core-toolbar/core-toolbar.html">
   <link rel="import" href="../components/paper-tabs/paper-tabs.html">
-  <link rel="import" href="post-card.html">
   <link rel="import" href="post-list.html">
   <style>
   html,body {
@@ -67,12 +66,7 @@
     </core-toolbar>
 
     <div class="container" layout vertical container>
-      <post-card>
-        <h2>Header</h2>
-        <img src="../images/avatar-01.svg" height="70" width="70" />
-        Content not inside any element?
-        <div>Additional inside the post-card</div>
-      </post-card>
+      <post-list show="all"></post-list>
     </div>
   </core-header-panel>
 </body>

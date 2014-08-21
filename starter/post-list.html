@@ -15,8 +15,16 @@
     </style>
     
     <post-service id="service" posts="{{posts}}"></post-service>
-    <!-- add markup here -->
     
+    <div layout vertical center>
+      <template repeat="{{post in posts}}">
+        <post-card>
+          <h2>{{post.username}}</h2>
+          <img src="{{post.avatar}}"/>
+          <p>{{post.text}}</p>
+        </post-card>
+      </template>
+    </div>
   </template>
 
   <script>
